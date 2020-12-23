@@ -22,9 +22,7 @@ const release = async () => {
   await preInstall(core.getInput(inputs.extra_plugins));
   await preInstall(core.getInput(inputs.extends));
 
-  const cwd = process.cwd();
   const wd = core.getInput(inputs.working_directory);
-  const dir = path.join(cwd, dir);
 
   const semanticRelease = require('semantic-release');
   const result = await semanticRelease({
@@ -32,7 +30,7 @@ const release = async () => {
     ...handleDryRunOption(),
     ...handleExtends(),
   }, {
-    cwd: dir,
+    cwd: wd,
   });
 
   await cleanupNpmrc();
