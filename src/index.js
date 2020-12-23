@@ -22,6 +22,13 @@ const release = async () => {
   await preInstall(core.getInput(inputs.extra_plugins));
   await preInstall(core.getInput(inputs.extends));
 
+  const cwd = process.cwd();
+  const wd = core.getInput(inputs.working_directory);
+  const dir = path.join(cwd, dir);
+
+  core.debug(`Change working directory to ${dir}`);
+  process.chdir(dir);
+
   const semanticRelease = require('semantic-release');
   const result = await semanticRelease({
     ...handleBranchesOption(),
@@ -35,13 +42,6 @@ const release = async () => {
 
 module.exports = () => {
   core.debug('Initialization successful');
-
-  const cwd = process.cwd();
-  const wd = core.getInput(inputs.working_directory);
-  const dir = path.join(cwd, dir);
-
-  core.debug(`Change working directory to ${dir}`);
-  process.chdir(dir);
 
   release().catch(core.setFailed);
 };
