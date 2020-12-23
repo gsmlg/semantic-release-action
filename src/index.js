@@ -22,7 +22,9 @@ const release = async () => {
   await preInstall(core.getInput(inputs.extra_plugins));
   await preInstall(core.getInput(inputs.extends));
 
+  const ws = process.env.GITHUB_WORKSPACE;
   const wd = core.getInput(inputs.working_directory);
+  const dir = path.join(ws, wd);
 
   const semanticRelease = require('semantic-release');
   const result = await semanticRelease({
@@ -30,7 +32,7 @@ const release = async () => {
     ...handleDryRunOption(),
     ...handleExtends(),
   }, {
-    cwd: wd,
+    cwd: dir,
   });
 
   await cleanupNpmrc();
