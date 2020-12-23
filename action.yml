@@ -23,6 +23,9 @@ inputs:
   extends:
     required: false
     description: 'One or several sharable configurations, https://semantic-release.gitbook.io/semantic-release/usage/configuration#extends'
+  working-directory:
+    required: false
+    description: 'Sementic release running directory.'
 outputs:
   new_release_published:
     description: 'Whether a new release was published'
@@ -39,5 +42,5 @@ outputs:
   new_release_notes:
     description: 'The release notes for the new release.'
 runs:
-  using: 'node12'
+  using: 'node14'
   main: 'index.js'
