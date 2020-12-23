@@ -1,4 +1,5 @@
 const core = require('@actions/core');
+const path = require('path');
 const {
   handleBranchesOption,
   handleDryRunOption,
@@ -34,5 +35,13 @@ const release = async () => {
 
 module.exports = () => {
   core.debug('Initialization successful');
+
+  const cwd = process.cwd();
+  const wd = core.getInput(inputs.working_directory);
+  const dir = path.join(cwd, dir);
+
+  core.debug(`Change working directory to ${dir}`);
+  process.chdir(dir);
+
   release().catch(core.setFailed);
 };
