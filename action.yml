@@ -42,5 +42,5 @@ outputs:
   new_release_notes:
     description: 'The release notes for the new release.'
 runs:
-  using: 'node14'
+  using: 'node12'
   main: 'index.js'
