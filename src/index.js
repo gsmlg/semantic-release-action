@@ -26,14 +26,13 @@ const release = async () => {
   const wd = core.getInput(inputs.working_directory);
   const dir = path.join(cwd, dir);
 
-  core.debug(`Change working directory to ${dir}`);
-  process.chdir(dir);
-
   const semanticRelease = require('semantic-release');
   const result = await semanticRelease({
     ...handleBranchesOption(),
     ...handleDryRunOption(),
     ...handleExtends(),
+  }, {
+    cwd: dir,
   });
 
   await cleanupNpmrc();
