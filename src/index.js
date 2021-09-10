@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const path = require('path');
+const fs = require('fs');
 const {
   handleBranchesOption,
   handleDryRunOption,
@@ -25,6 +26,19 @@ const release = async () => {
   const ws = process.env.GITHUB_WORKSPACE;
   const wd = core.getInput(inputs.working_directory);
   const dir = path.join(ws, wd);
+
+  const release_name = core.getInput(inputs.release_name);
+
+  if (release_name) {
+    const pkgJson = path.join(dir, 'package.json');
+    const pkgContent = `
+      {
+        "name": "${release_name}"
+      }
+    `;
+    fs.writeFileSync(pkgJson, pkgContent);
+  }
+
 
   const semanticRelease = require('semantic-release');
   const result = await semanticRelease({

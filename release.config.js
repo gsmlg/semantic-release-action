@@ -1,5 +1,6 @@
 module.exports = {
   "dryRun": false,
+  "extends": "semantic-release-monorepo",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
@@ -9,7 +10,6 @@ module.exports = {
         "changelogFile": "docs/CHANGELOG.md"
       }
     ],
-    "@semantic-release/npm",
     "@semantic-release/github",
     [
       "@semantic-release/git",
@@ -20,6 +20,13 @@ module.exports = {
           "package-lock.json"
         ],
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "echo ${nextRelease.version}",
+        "publishCmd": "echo pubhlish editor server ${nextRelease.version}"
       }
     ]
   ]

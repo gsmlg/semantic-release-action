@@ -1,5 +1,5 @@
 {
-  "name": "@cycjimmy/semantic-release-action",
+  "name": "@gsmlg/semantic-release-monorepo-action",
   "version": "2.5.4",
   "description": "GitHub Action for Semantic Release",
   "main": "index.js",
@@ -8,18 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cycjimmy/semantic-release-action.git"
+    "url": "git+https://github.com/gsmlg/semantic-release-action.git"
   },
   "keywords": [
     "semantic-release",
+    "semantic-release-monorepo",
     "action"
   ],
-  "author": "cycjimmy <cycjimmy@gmail.com> (https://github.com/cycjimmy)",
+  "author": "gsmlg <gsmlg.com@gmail.com> (https://github.com/gsmlg)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cycjimmy/semantic-release-action/issues"
+    "url": "https://github.com/gsmlg/semantic-release-action/issues"
   },
-  "homepage": "https://github.com/cycjimmy/semantic-release-action#readme",
+  "homepage": "https://github.com/gsmlg/semantic-release-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@cycjimmy/awesome-js-funcs": "^2.4.0"
