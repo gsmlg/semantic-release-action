@@ -53,12 +53,15 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Test Outputs
-        if: steps.semantic.outputs.new_release_published == 'true'
+        # if: steps.semantic.outputs.new_release_published == 'true'
         run: |
           echo ${{ steps.semantic.outputs.new_release_version }}
           echo ${{ steps.semantic.outputs.new_release_major_version }}
           echo ${{ steps.semantic.outputs.new_release_minor_version }}
           echo ${{ steps.semantic.outputs.new_release_patch_version }}
+          cat <<"EOF"
+          ${{ steps.semantic.outputs.new_release_notes }}
+          EOF
 
   test-semantic-v15:
     name: test-semantic-v15
@@ -88,11 +91,14 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Test Outputs
-        if: steps.semantic.outputs.new_release_published == 'true'
+        # if: steps.semantic.outputs.new_release_published == 'true'
         run: |
           echo ${{ steps.semantic.outputs.new_release_version }}
           echo ${{ steps.semantic.outputs.new_release_major_version }}
           echo ${{ steps.semantic.outputs.new_release_minor_version }}
           echo ${{ steps.semantic.outputs.new_release_patch_version }}
+          cat <<"EOF"
+          ${{ steps.semantic.outputs.new_release_notes }}
+          EOF
 
 
