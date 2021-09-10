@@ -19,7 +19,7 @@ module.exports = async () => {
   core.debug(stdout);
   core.error(stderr);
 
-  (() => {
+  await (async () => {
     const {stdout, stderr} = await exec(`npm install semantic-release-monorepo @semantic-release/exec --silent`, {
       cwd: path.resolve(__dirname, '..')
     });
