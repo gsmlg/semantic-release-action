@@ -30,6 +30,8 @@ const release = async () => {
   const release_name = core.getInput(inputs.release_name);
 
   if (release_name) {
+    core.debug(`DEBUG input Package release_name: ${release_name}`);
+
     const pkgJson = path.join(dir, 'package.json');
     const pkgContent = `
       {
