@@ -22,6 +22,7 @@ const release = async () => {
   await installSpecifyingVersionSemantic();
   await preInstall(core.getInput(inputs.extra_plugins));
   await preInstall(core.getInput(inputs.extends));
+  await preInstall('semantic-release-monorepo @semantic-release/exec');
 
   const ws = process.env.GITHUB_WORKSPACE;
   const wd = core.getInput(inputs.working_directory);
