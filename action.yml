@@ -1,10 +1,13 @@
 name: 'Action For Semantic Release'
 description: 'GitHub Action for Semantic Release'
-author: 'cycjimmy'
+author: 'gsmlg'
 branding:
   icon: 'package'
   color: 'orange'
 inputs:
+  name:
+    required: false
+    description: 'Specify package name, if it did not have a package.json file.'
   semantic_version:
     required: false
     description: 'Specify specifying version range for semantic-release. If no version range is specified, latest version will be used by default'
@@ -20,9 +23,6 @@ inputs:
   dry_run:
     required: false
     description: 'Whether to run semantic release in `dry-run` mode. It will override the dryRun attribute in your configuration file'
-  extends:
-    required: false
-    description: 'One or several sharable configurations, https://semantic-release.gitbook.io/semantic-release/usage/configuration#extends'
   working-directory:
     required: false
     description: 'Sementic release running directory.'
@@ -44,3 +44,4 @@ outputs:
 runs:
   using: 'node12'
   main: 'index.js'
+

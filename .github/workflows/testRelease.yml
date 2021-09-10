@@ -28,6 +28,7 @@ jobs:
         uses: ./
         id: semantic
         with:
+          name: test-project
           dry_run: true
           branches: |
             [
