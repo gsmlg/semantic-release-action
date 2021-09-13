@@ -29,20 +29,19 @@ const release = async () => {
 
   const release_name = core.getInput(inputs.release_name);
 
-  const pkgFile = path.join(dir, 'package.json');
+  const pkgJson = path.join(dir, 'package.json');
 
   if (release_name) {
     core.debug(`DEBUG input Package release_name: ${release_name}`);
 
-    const pkgJson = pkgFile;
     const pkgContent = `
       {
         "name": "${release_name}"
       }
     `;
     fs.writeFileSync(pkgJson, pkgContent);
-  } else if (!fs.existsSync(pkgFile)) {
-    const baseName = path.basename(pkgFile);
+  } else if (!fs.existsSync(pkgJson)) {
+    const baseName = path.basename(pkgJson);
     const pkgContent = `
       {
         "name": "${baseName}"
