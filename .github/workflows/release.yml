@@ -24,7 +24,7 @@ jobs:
         uses: gsmlg/semantic-release-action@v3
         id: semantic
         with:
-          extra_plugins: |
+          extra_plugins: >-
             @semantic-release/git
             @semantic-release/changelog
         env:
