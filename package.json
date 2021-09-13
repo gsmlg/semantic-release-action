@@ -1,8 +1,9 @@
 {
-  "name": "@gsmlg/semantic-release-monorepo-action",
+  "name": "@gsmlg/semantic-release-action",
   "version": "3.0.0",
   "description": "GitHub Action for Semantic Release",
   "main": "index.js",
+  "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
