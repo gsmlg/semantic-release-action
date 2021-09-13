@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/gsmlg/semantic-release-action/compare/v3.0.1...v3.0.2) (2021-09-13)
+
+
+### Bug Fixes
+
+* Set scoped package with publishConfig. ([0396f05](https://github.com/gsmlg/semantic-release-action/commit/0396f05d84f286ffe4dd25b5e3584e4bc7aa3caf))
+
 ## [3.0.1](https://github.com/gsmlg/semantic-release-action/compare/v3.0.0...v3.0.1) (2021-09-13)
 
 
