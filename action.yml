@@ -5,7 +5,7 @@ branding:
   icon: 'package'
   color: 'orange'
 inputs:
-  name:
+  release_name:
     required: false
     description: 'Specify package name, if it did not have a package.json file.'
   semantic_version:

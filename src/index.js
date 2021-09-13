@@ -43,7 +43,7 @@ const release = async () => {
     `;
     fs.writeFileSync(pkgJson, pkgContent);
   } else if (!fs.existsSync(pkgJson)) {
-    const baseName = path.basename(pkgJson);
+    const baseName = path.basename(dir);
     const pkgContent = `
       {
         "name": "${baseName}"
