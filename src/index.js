@@ -27,6 +27,8 @@ const release = async () => {
   const wd = core.getInput(inputs.working_directory);
   const dir = path.join(ws, wd);
 
+  process.chdir(dir);
+
   const release_name = core.getInput(inputs.release_name);
 
   const pkgJson = path.join(dir, 'package.json');
