@@ -1,6 +1,6 @@
 {
   "name": "@gsmlg/semantic-release-action",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "GitHub Action for Semantic Release",
   "main": "index.js",
   "private": false,

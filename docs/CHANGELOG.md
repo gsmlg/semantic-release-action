@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/gsmlg/semantic-release-action/compare/v3.0.0...v3.0.1) (2021-09-13)
+
+
+### Bug Fixes
+
+* Set scoped package with private false. ([0a9969e](https://github.com/gsmlg/semantic-release-action/commit/0a9969ee9f0c7024de5304664db24d902cc8e2d0))
+
 # [3.0.0](https://github.com/gsmlg/semantic-release-action/compare/v2.5.3...v3.0.0) (2021-09-13)
 
 
