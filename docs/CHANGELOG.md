@@ -1,3 +1,46 @@
+# [3.0.0](https://github.com/gsmlg/semantic-release-action/compare/v2.5.3...v3.0.0) (2021-09-13)
+
+
+### Bug Fixes
+
+* Add Workspace dir ([956267b](https://github.com/gsmlg/semantic-release-action/commit/956267b5a065b461b7728a994ea6119bc50c15fb))
+* Always show output ([f642a0a](https://github.com/gsmlg/semantic-release-action/commit/f642a0add2431865ed85120c21781fbb9ec623ff))
+* Fix action. ([d27b478](https://github.com/gsmlg/semantic-release-action/commit/d27b47874ed827e7307180ae7f3ce3da6d140c12))
+* Fix bug. ([47a9a21](https://github.com/gsmlg/semantic-release-action/commit/47a9a215a6881c04847d610cb708b24127067f44))
+* Fix chdir. ([bcd53ea](https://github.com/gsmlg/semantic-release-action/commit/bcd53ea3e72bd78bedab52405826c2fedcad36ef))
+* Fix extra_plugins. ([56ca1ae](https://github.com/gsmlg/semantic-release-action/commit/56ca1ae944eda808cf3c543c78975b8f8291a61f))
+* Fix extra_plugins. ([3cd6ca2](https://github.com/gsmlg/semantic-release-action/commit/3cd6ca2cb45a62d93476a1b9ea12a37733e879b8))
+* Fix missing @semantic-release/exec. ([f926412](https://github.com/gsmlg/semantic-release-action/commit/f926412c9bbd170dfd15c7ec5037af33f500f851))
+* Fix missing semantic-release-monorepo. ([ed8a67f](https://github.com/gsmlg/semantic-release-action/commit/ed8a67fb12c56f7f1e7ffc731ca2258bd71cd83e))
+* Fix NPM_TOKEN. ([2b9be2c](https://github.com/gsmlg/semantic-release-action/commit/2b9be2ccbb807d078833c4a031623b32cb663471))
+* Fix NPM_TOKEN. ([9417d4f](https://github.com/gsmlg/semantic-release-action/commit/9417d4ffa0573f8cc5c23769dfecf03ba436bd45))
+* Fix token. ([8caf5e5](https://github.com/gsmlg/semantic-release-action/commit/8caf5e5b8ce50ef9b311df3f772564b6066551cf))
+* Update args. ([dcb8a3b](https://github.com/gsmlg/semantic-release-action/commit/dcb8a3b0aa8d0b5cb62e52bcca2fc30248b7a671))
+* **deps:** Fix release config. ([ec21719](https://github.com/gsmlg/semantic-release-action/commit/ec2171981c1082eefffb0c8a4b513c8b9e207f3a))
+* use error loglevel for installing dependencies ([887368a](https://github.com/gsmlg/semantic-release-action/commit/887368a35d80f1b0c3720babb844f88b360c4f13)), closes [#57](https://github.com/gsmlg/semantic-release-action/issues/57)
+* Use semantic release api to change cwd. ([293b31c](https://github.com/gsmlg/semantic-release-action/commit/293b31cf6be55593d27549c4a56735c7259424d4))
+* Use semantic release api to change cwd. ([3a5638d](https://github.com/gsmlg/semantic-release-action/commit/3a5638ded450a0e2fa97ad73b3f4a71d88bd7910))
+* Using node14 is not support yet, back to node12. ([d587308](https://github.com/gsmlg/semantic-release-action/commit/d587308e91e273e70942a46116e8fe7181aabd2f))
+
+
+### Features
+
+* Add name and remove extends. ([c5005bb](https://github.com/gsmlg/semantic-release-action/commit/c5005bb6ff710c9bd3115fb1aa0959aa03302f3e))
+* Add working-directory. ([c5cf3a7](https://github.com/gsmlg/semantic-release-action/commit/c5cf3a747ffbc3baab6d270d1fc6f341af7acb9c))
+* Add working-directory. ([ed1d114](https://github.com/gsmlg/semantic-release-action/commit/ed1d114edd15c0a59c974da4bef92e11af54007b))
+* Change to node 14. ([0db5053](https://github.com/gsmlg/semantic-release-action/commit/0db50533410b79edc052ef8a5aeadc74ca8bd0f4))
+* Change to semantic release monorepo. ([23dd334](https://github.com/gsmlg/semantic-release-action/commit/23dd33416a68cefa48487de626a87dbcbede86a7))
+* Use self hosted release. ([97821e2](https://github.com/gsmlg/semantic-release-action/commit/97821e2b37e567384afc361fb05371fb9ce9e556))
+* Use v3 release. ([36a0c87](https://github.com/gsmlg/semantic-release-action/commit/36a0c872287dd82936d0b5d345dab0287b7d591e))
+* **release:** Rebuild. ([2300e41](https://github.com/gsmlg/semantic-release-action/commit/2300e41050ba712fece1c7a053196c74a55a6cbe))
+
+
+### BREAKING CHANGES
+
+* The extends option has been removed.
+Add name and working-direcotry to monorepo.
+Only support monorepo and non javascript repo.
+
 ## [2.5.4](https://github.com/cycjimmy/semantic-release-action/compare/v2.5.3...v2.5.4) (2021-04-30)
 
 
