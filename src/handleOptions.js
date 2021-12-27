@@ -65,7 +65,11 @@ exports.handleDryRunOption = () => {
  * @returns {{}|{extends: Array}|{extends: String}}
  */
 exports.handleExtends = () => {
-  const extend = 'semantic-release-monorepo';
+  const extend = core.getInput(inputs.extends);
 
-  return { extends: extend };
+  if (extend) {
+    return { extends: extend };
+  } else {
+    return {};
+  }
 };
