@@ -43,14 +43,15 @@ then make sure that you configure this in your `package.json` file:
 ```
 
 ### Inputs
-| Input Parameter  | Required | Description |
-|:----------------:|:--------:|-------------|
-| semantic_version | false    | Specify specifying version range for semantic-release. [[Details](#semantic_version)] |
-| branches         | false    | The branches on which releases should happen.[[Details](#branches)]<br>Support for **semantic-release above v16**. |
-| branch           | false    | The branch on which releases should happen.[[Details](#branch)]<br>Only support for **semantic-release older than v16**. |
-| extra_plugins    | false    | Extra plugins for pre-install. [[Details](#extra_plugins)] |
-| dry_run          | false    | Whether to run semantic release in `dry-run` mode. [[Details](#dry_run)] |
-| extends          | false    | Use a sharable configuration [[Details](#extends)] |
+| Input Parameter   | Required | Description |
+|:-----------------:|:--------:|-------------|
+| semantic_version  | false    | Specify specifying version range for semantic-release. [[Details](#semantic_version)] |
+| branches          | false    | The branches on which releases should happen.[[Details](#branches)]<br>Support for **semantic-release above v16**. |
+| branch            | false    | The branch on which releases should happen.[[Details](#branch)]<br>Only support for **semantic-release older than v16**. |
+| extra_plugins     | false    | Extra plugins for pre-install. [[Details](#extra_plugins)] |
+| dry_run           | false    | Whether to run semantic release in `dry-run` mode. [[Details](#dry_run)] |
+| extends           | false    | Use a sharable configuration [[Details](#extends)] |
+| working_directory | false    | Use another working directory for semantic release [[Details](#working_directory)] |
 
 #### semantic_version
 > {Optional Input Parameter} Specify specifying version range for semantic-release.<br>If no version range is specified, latest version will be used by default.
@@ -206,6 +207,23 @@ steps:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 ```
 
+#### working_directory
+This action run semantic release in the github provided workspace by default. You can override it by setting another working directory.
+
+```yaml
+steps:
+  - name: Checkout
+    uses: actions/checkout@v2
+  - name: Semantic Release
+    uses: cycjimmy/semantic-release-action@v2
+    with:
+      # You can select another working directory like a subdirectory for example.
+      working_directory: ./code
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+```
+
 ### Outputs
 | Output Parameter          | Description |
 |:-------------------------:|---|
@@ -216,6 +234,7 @@ steps:
 | new_release_patch_version | Patch version of the new release. (e.g. `0`) |
 | new_release_channel       | The distribution channel on which the last release was initially made available (undefined for the default distribution channel). |
 | new_release_notes         | The release notes for the new release. |
+| last_release_version      | Version of the previous release, if there was one. (e.g. `1.2.0`) |
 
 #### Using Output Variables:
 ```yaml

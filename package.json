@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/gsmlg/semantic-release-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.6",
+    "@actions/core": "^1.6.0",
     "@cycjimmy/awesome-js-funcs": "^3.1.0"
   }
 }

@@ -36,6 +36,8 @@
 * Use semantic release api to change cwd. ([3a5638d](https://github.com/gsmlg/semantic-release-action/commit/3a5638ded450a0e2fa97ad73b3f4a71d88bd7910))
 * Using node14 is not support yet, back to node12. ([d587308](https://github.com/gsmlg/semantic-release-action/commit/d587308e91e273e70942a46116e8fe7181aabd2f))
 
+# [2.7.0](https://github.com/cycjimmy/semantic-release-action/compare/v2.6.0...v2.7.0) (2021-12-12)
+
 
 ### Features
 
@@ -54,6 +56,15 @@
 * The extends option has been removed.
 Add name and working-direcotry to monorepo.
 Only support monorepo and non javascript repo.
+
+* add working dir ([7126083](https://github.com/cycjimmy/semantic-release-action/commit/71260837fb05623446dee88dd211f7530838b234))
+
+# [2.6.0](https://github.com/cycjimmy/semantic-release-action/compare/v2.5.4...v2.6.0) (2021-10-15)
+
+
+### Features
+
+* add output for last release version ([f8175c6](https://github.com/cycjimmy/semantic-release-action/commit/f8175c649133e2d9be14098cc4d41f7ef32316b6))
 
 ## [2.5.4](https://github.com/cycjimmy/semantic-release-action/compare/v2.5.3...v2.5.4) (2021-04-30)
 

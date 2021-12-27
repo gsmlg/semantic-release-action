@@ -23,9 +23,9 @@ inputs:
   dry_run:
     required: false
     description: 'Whether to run semantic release in `dry-run` mode. It will override the dryRun attribute in your configuration file'
-  working-directory:
+  working_directory:
     required: false
-    description: 'Sementic release running directory.'
+    description: 'Specify another working directory for semantic release. Default one is provided by github.'
 outputs:
   new_release_published:
     description: 'Whether a new release was published'
@@ -41,6 +41,8 @@ outputs:
     description: 'The distribution channel on which the last release was initially made available (undefined for the default distribution channel).'
   new_release_notes:
     description: 'The release notes for the new release.'
+  last_release_version:
+    description: 'Version of the previous release, if there was one.'
 runs:
   using: 'node12'
   main: 'index.js'
