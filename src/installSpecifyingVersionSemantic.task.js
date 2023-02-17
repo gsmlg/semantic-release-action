@@ -18,4 +18,5 @@ module.exports = async () => {
   });
   core.debug(stdout);
   core.error(stderr);
+
 };

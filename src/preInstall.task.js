@@ -6,7 +6,7 @@ const exec = require('./_exec');
  * Pre-install extra dependecies
  * @returns {Promise<void>}
  */
-module.exports = async extras => {
+module.exports = async (extras) => {
   if (!extras) {
     return Promise.resolve();
   }

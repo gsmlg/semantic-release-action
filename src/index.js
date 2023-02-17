@@ -1,4 +1,6 @@
 const core = require('@actions/core');
+const path = require('path');
+const fs = require('fs');
 const {
   handleBranchesOption,
   handleDryRunOption,
@@ -22,13 +24,45 @@ const release = async () => {
   await setUpJob();
   await installSpecifyingVersionSemantic();
   await preInstall(core.getInput(inputs.extra_plugins));
-  await preInstall(core.getInput(inputs.extends));
+  await preInstall('@semantic-release/exec');
+
+  const ws = process.env.GITHUB_WORKSPACE;
+  const wd = core.getInput(inputs.working_directory);
+  const dir = path.join(ws, wd);
+
+  process.chdir(dir);
+
+  const release_name = core.getInput(inputs.release_name);
+
+  const pkgJson = path.join(dir, 'package.json');
+
+  if (release_name) {
+    core.debug(`DEBUG input Package release_name: ${release_name}`);
+
+    const pkgContent = `
+      {
+        "name": "${release_name}"
+      }
+    `;
+    fs.writeFileSync(pkgJson, pkgContent);
+  } else if (!fs.existsSync(pkgJson)) {
+    const baseName = path.basename(dir);
+    const pkgContent = `
+      {
+        "name": "${baseName}"
+      }
+    `;
+    fs.writeFileSync(pkgJson, pkgContent);
+  }
+
 
   const semanticRelease = require('semantic-release');
   const result = await semanticRelease({
     ...handleBranchesOption(),
     ...handleDryRunOption(),
     ...handleExtends(),
+  }, {
+    cwd: dir,
   });
 
   await cleanupNpmrc();
@@ -37,5 +71,6 @@ const release = async () => {
 
 module.exports = () => {
   core.debug('Initialization successful');
+
   release().catch(core.setFailed);
 };
